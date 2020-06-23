@@ -1,0 +1,320 @@
+:root {
+  --baseColor: #091034;
+  --accentColor: #FF9E72;
+  --baseSecondary: #01051C;
+  --primaryGray: #E4E4E4;
+  --secondaryGray: #444444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--baseColor);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero_heading {
+  opacity: 1;
+  width: 100%;
+}
+
+.hero_heading img {
+  margin-left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hero_heading .my_name {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero_heading .my_name p {
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+.hero_heading .my_name p:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accentColor);
+  -webkit-animation: abtahiFadeIn 1s ease-out forwards;
+          animation: abtahiFadeIn 1s ease-out forwards;
+}
+
+.hero_heading .my_name p:nth-child(2) {
+  color: white;
+  -webkit-animation: tajwarFadeIn 1s ease-out forwards;
+          animation: tajwarFadeIn 1s ease-out forwards;
+}
+
+.hero_heading p:nth-child(3) {
+  color: var(--accentColor);
+  text-align: center;
+  letter-spacing: 0.3rem;
+  font-size: .7rem;
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  -webkit-animation: abtahiFadeIn 1s ease-out 1s forwards;
+          animation: abtahiFadeIn 1s ease-out 1s forwards;
+}
+
+aside {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+aside nav {
+  margin-top: 20px;
+}
+
+aside nav ul {
+  height: 62px;
+  width: 100%;
+  background-color: var(--baseSecondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+aside nav ul a {
+  text-decoration: none;
+  color: var(--accentColor);
+  letter-spacing: 0.3rem;
+}
+
+aside nav ul a:hover {
+  border-bottom: 1px solid var(--accentColor);
+}
+
+aside .social_media {
+  display: none;
+}
+
+aside .scrollbar {
+  display: none;
+}
+
+main {
+  background-color: white;
+  width: 100%;
+}
+
+main ul {
+  display: none;
+}
+
+main p:nth-child(1) {
+  display: none;
+}
+
+main .select {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+  border: none;
+  background-color: var(--primaryGray);
+  font-size: .8rem;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  color: var(--secondaryGray);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(exported/dropdownIcon.svg);
+  background-repeat: no-repeat;
+  background-position: right 20px top 50%;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+main .select option p {
+  padding: 20px;
+  color: white;
+  background-color: var(--secondaryGray);
+}
+
+main .websites {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+main .websites .item {
+  margin-top: 20px;
+  text-align: center;
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+  opacity: 0;
+  -webkit-animation: itemsFadeIn 1s ease-out forwards;
+          animation: itemsFadeIn 1s ease-out forwards;
+}
+
+main .websites .item .image {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .websites .item .image img {
+  width: 100%;
+}
+
+main .websites .item .desc h1 {
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: var(--secondaryGray);
+  letter-spacing: .2rem;
+}
+
+main .websites .item .desc p {
+  font-size: .8rem;
+  letter-spacing: .2rem;
+}
+
+main .websites .item .desc .button {
+  border-radius: 25px;
+  background-color: var(--primaryGray);
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+main .websites .item .desc .button a {
+  text-decoration: none;
+  color: var(--secondaryGray);
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .component {
+  display: none;
+}
+
+@-webkit-keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes tajwarFadeIn {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes tajwarFadeIn {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes itemsFadeIn {
+  from {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes itemsFadeIn {
+  from {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
