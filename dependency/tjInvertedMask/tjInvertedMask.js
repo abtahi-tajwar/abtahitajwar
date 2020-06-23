@@ -6,7 +6,7 @@
 */
 
 let topSize = document.querySelector(".tjInvertedMask").getBoundingClientRect().top;
-let leftSize = document.querySelector(".tjInvertedMask").getBoundingClientRect().left;
+let leftSize = document.querySelector(".tjInvertedMask").getBoundingClientRect().left - document.querySelector(".component_main").offsetWidth;
 
 function setClipperToPosition(tjCursor, event = null)
 {
@@ -15,10 +15,11 @@ function setClipperToPosition(tjCursor, event = null)
     document.querySelector(".tjInvertedMaskinner #clipper").setAttribute("cy", document.querySelector(".tj-cursor").offsetTop - topSize+35);
   }
   else {
-    console.log(leftSize);
+    // console.log("left:" + (event.clientX - leftSize));
+    // console.log("top:" + (event.clientX - topSize));
     console.log(topSize);
     document.querySelector("#clipper").setAttribute("cx", event.clientX - leftSize);
-    document.querySelector("#clipper").setAttribute("cy", event.clientX - topSize);
+    document.querySelector("#clipper").setAttribute("cy", event.clientY - topSize);
   }
 
 }
