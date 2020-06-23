@@ -43,7 +43,7 @@ body {
 }
 
 .hero_heading .my_name p {
-  font-size: 2.7rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
@@ -75,6 +75,7 @@ body {
 aside {
   position: -webkit-sticky;
   position: sticky;
+  z-index: 100;
   top: 0;
 }
 
@@ -121,7 +122,7 @@ main {
   width: 100%;
 }
 
-main ul {
+main .sidebar {
   display: none;
 }
 
@@ -129,11 +130,19 @@ main p:nth-child(1) {
   display: none;
 }
 
-main .select {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+main .selectMenu {
   height: 50px;
   width: 100%;
-  text-align: center;
+  background-color: var(--primaryGray);
+  overflow: hidden;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+}
+
+main .selectMenu .selectMenuHeading {
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,38 +152,48 @@ main .select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  outline: none;
-  border: none;
-  background-color: var(--primaryGray);
-  font-size: .8rem;
-  font-weight: bold;
-  letter-spacing: .2rem;
-  color: var(--secondaryGray);
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   background-image: url(exported/dropdownIcon.svg);
   background-repeat: no-repeat;
   background-position: right 20px top 50%;
-  -webkit-transition: all .5s ease-out;
-  transition: all .5s ease-out;
 }
 
-main .select option p {
-  padding: 20px;
-  color: white;
+main .selectMenu ul {
+  width: 100%;
+  list-style: none;
+}
+
+main .selectMenu ul li {
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .selectMenu ul li:hover {
   background-color: var(--secondaryGray);
+  color: white;
+}
+
+main .selectMenu ul .selected {
+  background-color: var(--secondaryGray);
+  color: white;
 }
 
 main .websites {
   width: 80%;
-  height: 100%;
   margin: 0 auto;
   padding-bottom: 50px;
 }
 
 main .websites .item {
-  margin-top: 20px;
+  padding-top: 20px;
   text-align: center;
   -webkit-transform: translateY(-40px);
           transform: translateY(-40px);
