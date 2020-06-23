@@ -178,7 +178,7 @@ main .selectMenu ul li {
           align-items: center;
 }
 
-main .selectMenu ul li:hover {
+main .selectMenu ul li:not(.selected):hover {
   background-color: var(--secondaryGray);
   color: white;
 }
