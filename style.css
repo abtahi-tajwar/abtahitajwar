@@ -127,7 +127,7 @@ main .sidebar {
   display: none;
 }
 
-main p:nth-child(1) {
+main .sidebarplaceholder {
   display: none;
 }
 
@@ -188,6 +188,7 @@ main .selectMenu ul .selected {
 }
 
 main .websites {
+  display: none;
   width: 80%;
   margin: 0 auto;
   padding-bottom: 50px;
@@ -258,6 +259,102 @@ main .websites .item .desc .button a {
 }
 
 main .component {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+main .component h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20px;
+  letter-spacing: .4rem;
+}
+
+main .component .component_holder {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+main .component .component_holder .component_main {
+  pointer-events: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main .component .component_holder .component_main .component_slider {
+  width: 200%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  place-items: center;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  pointer-events: none;
+}
+
+main .component .component_holder .component_main .component_slider .tj-container {
+  pointer-events: all;
+}
+
+main .component .component_holder .component_main .component_slider .tjInvertedMask {
+  pointer-events: all;
+}
+
+main .component .component_holder .component_main .test-container {
+  height: 100%;
+  width: 50%;
+  background-color: red;
+}
+
+main .component .desc {
+  letter-spacing: .2rem;
+  color: var(--secondaryGray);
+  text-align: center;
+}
+
+main .component .download {
+  height: 40px;
+  width: 150px;
+  background-color: var(--baseColor);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+main .component .download a {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+main .standalone {
   display: none;
 }
 

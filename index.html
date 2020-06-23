@@ -6,6 +6,8 @@
     <title>Abtahi Tajwar | Home</title>
     <link rel="icon" href="exported/webIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dependency/tjFancyCursor/tjFancyCursor.css">
+    <link rel="stylesheet" href="dependency/tjInvertedMask/tjInvertedMask.css">
 </head>
 <body>
         <div class="container">
@@ -37,7 +39,7 @@
             </aside>
             <main>
                 <nav>
-                    <p>PORTFOLIOS</p>
+                    <p class="sidebarplaceholder">PORTFOLIOS</p>
                     <ul class="sidebar">
                         <li>WEBSITES</li>
                         <li>COMPONENTS</li>
@@ -83,10 +85,18 @@
                 </div>
                 <div class="component">
                     <h1>TJ-CURSOR</h1>
-                    <div class="component_holder">
-
+                    <div class="component_holder">  
+                        <img src="exported/goLeft.svg" alt=""> 
+                        <div class="component_main">
+                            <div class="component_slider">
+                                <div class="tj-container"></div>
+                                <div class="tjInvertedMask"></div>
+                            </div>                            
+                        </div>                       
+                        <img src="exported/goRight.svg" alt="">
                     </div>
                     <div class="desc">
+                        
                         <p>This is a public usable javascript component named
                             tj-cursor. It could by used any website whether it
                             is built from scratch or WordPress/Elementor built 
@@ -98,9 +108,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="components"></div>
+                <div class="standalone"></div>
             </main>
         </div>
         <script src="home.js"></script>
+        <script src="dependency/tjFancyCursor/tjFancyCursor.js"></script>
+        <script src="dependency/tjInvertedMask/tjInvertedMask.js"></script>
+        
 </body>
 </html>

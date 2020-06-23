@@ -92,7 +92,7 @@ main {
     .sidebar {
         display: none;
     }
-    p:nth-child(1) {
+    .sidebarplaceholder {
         display: none;
     }
     .selectMenu {
@@ -133,6 +133,7 @@ main {
         }
     }
     .websites {
+        display: none;
         width: 80%;
         margin: 0 auto;
         padding-bottom: 50px;        
@@ -183,6 +184,76 @@ main {
         }
     }
     .component {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 50px;
+        h1 {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 20px;
+            letter-spacing: .4rem;
+        }
+        
+        .component_holder {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            .component_main {
+                pointer-events: none;
+                flex: 1;
+                .component_slider {
+                    width: 200%;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: 1fr;
+                    place-items: center;
+                    transition: all .5s ease-out;
+                    pointer-events: none;
+                    // transform: translateX(-50%);
+                    .tj-container {
+                        pointer-events: all;
+                    }
+                    .tjInvertedMask {
+                        pointer-events: all;
+                    }
+                }
+                .test-container {
+                    height: 100%;
+                    width: 50%;
+                    background-color: red;
+                }
+            }
+        }
+        .desc {
+            letter-spacing: .2rem;
+            color: var(--secondaryGray);
+            text-align: center;
+        }
+        .download {
+            height: 40px;
+            width: 150px;
+            background-color: var(--baseColor);
+            color: white;            
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0 auto;
+            margin-top: 20px;
+            a {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                text-decoration: none;
+
+            }
+        }
+    }
+    .standalone {
         display: none;
     }
 }
