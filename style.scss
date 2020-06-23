@@ -133,7 +133,6 @@ main {
         }
     }
     .websites {
-        display: none;
         width: 80%;
         margin: 0 auto;
         padding-bottom: 50px;        
@@ -184,7 +183,7 @@ main {
         }
     }
     .component {
-        display: block;
+        display: none;
         width: 90%;
         margin: 0 auto;
         padding-bottom: 50px;
@@ -201,6 +200,10 @@ main {
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            img {
+                width: 20px;
+                z-index: 100;
+            }
             .component_main {
                 pointer-events: none;
                 flex: 1;

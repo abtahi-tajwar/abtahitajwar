@@ -19,7 +19,7 @@ function setClipperToPosition(tjCursor, event = null)
     // console.log("top:" + (event.clientX - topSize));
     console.log(topSize);
     document.querySelector("#clipper").setAttribute("cx", event.clientX - leftSize);
-    document.querySelector("#clipper").setAttribute("cy", event.clientY - topSize);
+    document.querySelector("#clipper").setAttribute("cy", event.pageY - topSize);
   }
 
 }

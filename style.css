@@ -188,7 +188,6 @@ main .selectMenu ul .selected {
 }
 
 main .websites {
-  display: none;
   width: 80%;
   margin: 0 auto;
   padding-bottom: 50px;
@@ -259,7 +258,7 @@ main .websites .item .desc .button a {
 }
 
 main .component {
-  display: block;
+  display: none;
   width: 90%;
   margin: 0 auto;
   padding-bottom: 50px;
@@ -284,6 +283,11 @@ main .component .component_holder {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+}
+
+main .component .component_holder img {
+  width: 20px;
+  z-index: 100;
 }
 
 main .component .component_holder .component_main {
