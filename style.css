@@ -25,6 +25,7 @@ body {
 
 .hero_heading img {
   margin-left: 50%;
+  margin-top: 50px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -155,6 +156,7 @@ main .selectMenu .selectMenuHeading {
   background-image: url(exported/dropdownIcon.svg);
   background-repeat: no-repeat;
   background-position: right 20px top 50%;
+  border-bottom: 0.5px solid var(--secondaryGray);
 }
 
 main .selectMenu ul {
@@ -182,8 +184,7 @@ main .selectMenu ul li:hover {
 }
 
 main .selectMenu ul .selected {
-  background-color: var(--secondaryGray);
-  color: white;
+  font-weight: bold;
 }
 
 main .websites {
