@@ -99,6 +99,19 @@ window.addEventListener( 'wheel', function( e ) {
         sidenavdisplay(true);
     }
 });
+window.addEventListener( 'DOMMouseScroll', function( e ) {
+    console.log("wheel");
+    if(detectMouseWheelDirection(e) === 'up' && shown === true) {
+        changeState("on");
+        shown = false;
+        sidenavdisplay(false);
+    }
+    else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
+        changeState("off");
+        shown = true;
+        sidenavdisplay(true);
+    }
+});
 function changeState(state)
 {
     if(state === "on") {
