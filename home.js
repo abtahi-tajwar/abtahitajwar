@@ -75,8 +75,6 @@ window.addEventListener('resize', () => {
     positionMovingCircle();
 })
 window.addEventListener('mousemove', (e)=> {
-    console.log("translateX(-"+e.clientX/8+"px)");
-    console.log(document.querySelector(".my_name p:nth-child(1)"));
     document.querySelector(".my_name p:nth-child(1)").style.animation = "none";
     document.querySelector(".my_name p:nth-child(1)").style.transition = "all .3s ease-out";
     document.querySelector(".my_name p:nth-child(1)").style.transform = "translateX(-"+e.clientX/70+"px)";
@@ -86,3 +84,47 @@ window.addEventListener('mousemove', (e)=> {
     document.querySelector(".my_name p:nth-child(2)").style.transform = "translateX("+e.clientX/70+"px)";
 })
 positionMovingCircle();
+let shown = false;
+document.addEventListener( 'DOMMouseScroll', function( e ) {
+    if(detectMouseWheelDirection(e) === 'up' && shown === true) {
+        changeState("on");
+        shown = false;
+    }
+    else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
+        changeState("off");
+        shown = true;
+    }
+});
+function changeState(state)
+{
+    if(state === "on") {
+        document.querySelector("main").style.top = "67vh";
+        document.querySelector("main").style.width = "66%";
+        document.querySelector("main").style.top = "100";
+    }
+    else {
+        document.querySelector("main").style.top = "8.7vh";
+        document.querySelector("main").style.width = "70%";
+        document.querySelector("main").style.top = "100";
+    }
+    
+}
+function detectMouseWheelDirection( e )
+{
+    var delta = null,
+        direction = false
+    ;
+    if ( !e ) { // if the event is not provided, we get it from the window object
+        e = window.event;
+    }
+    if ( e.wheelDelta ) { // will work in most cases
+        delta = e.wheelDelta / 60;
+    } else if ( e.detail ) { // fallback for Firefox
+        delta = -e.detail / 2;
+    }
+    if ( delta !== null ) {
+        direction = delta > 0 ? 'up' : 'down';
+    }
+
+    return direction;
+}
