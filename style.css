@@ -130,6 +130,45 @@ main {
 
 main .sidebar {
   display: none;
+  list-style: none;
+  margin-top: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+
+main .sidebar li {
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  opacity: 0;
+  font-weight: bold;
+  letter-spacing: .2rem;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  width: 100%;
+  color: var(--secondaryGray);
+  cursor: pointer;
+}
+
+main .sidebar li:hover {
+  background-color: var(--secondaryGray);
+  color: var(--primaryGray);
+}
+
+main .sidebar li:nth-child(1) {
+  -webkit-animation: itemsFadeIn .8s ease-out forwards;
+          animation: itemsFadeIn .8s ease-out forwards;
+}
+
+main .sidebar li:nth-child(2) {
+  -webkit-animation: itemsFadeIn .8s ease-out .4s forwards;
+          animation: itemsFadeIn .8s ease-out .4s forwards;
+}
+
+main .sidebar li:nth-child(3) {
+  -webkit-animation: itemsFadeIn .8s ease-out .8s forwards;
+          animation: itemsFadeIn .8s ease-out .8s forwards;
 }
 
 main .sidebarplaceholder {
@@ -262,11 +301,21 @@ main .websites .item .desc .button a {
           align-items: center;
 }
 
+main .websites .item .desc .button:hover {
+  background-color: var(--secondaryGray);
+}
+
+main .websites .item .desc .button:hover a {
+  color: var(--primaryGray);
+}
+
 main .component {
   display: none;
   width: 90%;
   margin: 0 auto;
   padding-bottom: 50px;
+  -webkit-animation: itemsFadeIn .8s ease-out forwards;
+          animation: itemsFadeIn .8s ease-out forwards;
 }
 
 main .component h1 {
@@ -293,6 +342,7 @@ main .component .component_holder {
 main .component .component_holder img {
   width: 20px;
   z-index: 100;
+  cursor: pointer;
 }
 
 main .component .component_holder .component_main {
@@ -511,12 +561,17 @@ main .standalone {
   aside .social_media a {
     display: block;
   }
+  aside .social_media a:hover img {
+    height: 7vh;
+  }
   aside .social_media a img {
     height: 6vh;
     padding: 5px;
     opacity: 0;
     -webkit-transform: translateY(50px) scale(0.5);
             transform: translateY(50px) scale(0.5);
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
     cursor: pointer;
   }
   aside .social_media .facebook img {
@@ -580,6 +635,9 @@ main .standalone {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+  }
+  main .component {
+    width: 60%;
   }
 }
 

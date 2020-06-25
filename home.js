@@ -85,14 +85,18 @@ window.addEventListener('mousemove', (e)=> {
 })
 positionMovingCircle();
 let shown = false;
-document.addEventListener( 'DOMMouseScroll', function( e ) {
+
+window.addEventListener( 'wheel', function( e ) {
+    console.log("wheel");
     if(detectMouseWheelDirection(e) === 'up' && shown === true) {
         changeState("on");
         shown = false;
+        sidenavdisplay(false);
     }
     else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
         changeState("off");
         shown = true;
+        sidenavdisplay(true);
     }
 });
 function changeState(state)
@@ -109,8 +113,19 @@ function changeState(state)
     }
     
 }
+function sidenavdisplay(bool) {
+    if(bool) {
+        document.querySelector(".sidebarplaceholder").style.display = "none";
+        document.querySelector(".sidebar").style.display = "block";
+    }
+    else {
+        document.querySelector(".sidebar").style.display = "none";
+        document.querySelector(".sidebarplaceholder").style.display = "block";
+    }
+}
 function detectMouseWheelDirection( e )
 {
+    console.log("wheel");
     var delta = null,
         direction = false
     ;
@@ -118,9 +133,12 @@ function detectMouseWheelDirection( e )
         e = window.event;
     }
     if ( e.wheelDelta ) { // will work in most cases
+        console.log("kdjfksdj00");
         delta = e.wheelDelta / 60;
     } else if ( e.detail ) { // fallback for Firefox
         delta = -e.detail / 2;
+    } else if( e.originalEvent.wheelDelta ) {
+        delta = e.originalEvent.wheelDelta / 2;
     }
     if ( delta !== null ) {
         direction = delta > 0 ? 'up' : 'down';
@@ -128,3 +146,36 @@ function detectMouseWheelDirection( e )
 
     return direction;
 }
+document.querySelectorAll(".sidebar li").forEach(item => {
+    item.addEventListener('click', (e)=> {
+        let tag = e.target.attributes['tag'].value;
+        if(tag === 'websites') {
+            document.querySelector(".websites").style.display = "block";            
+            document.querySelector(".component").style.display = "none";
+            document.querySelector(".standalone").style.display = "none";
+
+            document.querySelector(".selectMenu ul li:nth-child(1)").classList.add("selected");
+            document.querySelector(".selectMenu ul li:nth-child(2)").classList.remove("selected");
+            document.querySelector(".selectMenu ul li:nth-child(3)").classList.remove("selected");
+        }
+        else if(tag === 'components') {
+            document.querySelector(".websites").style.display = "none";
+            document.querySelector(".component").style.display = "block";
+            document.querySelector(".standalone").style.display = "none";
+
+            document.querySelector(".selectMenu ul li:nth-child(1)").classList.remove("selected");
+            document.querySelector(".selectMenu ul li:nth-child(2)").classList.add("selected");
+            document.querySelector(".selectMenu ul li:nth-child(3)").classList.remove("selected");
+        }
+        else if(tag === 'standalone') {
+            document.querySelector(".websites").style.display = "none";
+            document.querySelector(".component").style.display = "none";
+            document.querySelector(".standalone").style.display = "block";
+
+            document.querySelector(".selectMenu ul li:nth-child(1)").classList.remove("selected");
+            document.querySelector(".selectMenu ul li:nth-child(2)").classList.remove("selected");
+            document.querySelector(".selectMenu ul li:nth-child(3)").classList.add("selected");
+            
+        }
+    })
+})
