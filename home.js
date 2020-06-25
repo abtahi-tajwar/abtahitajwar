@@ -66,3 +66,23 @@ document.querySelector(".component_holder img:nth-child(1)").addEventListener('c
 document.querySelector(".component_holder img:nth-child(3)").addEventListener('click', ()=> {
     document.querySelector(".component_slider").style.transform = 'translateX(-50%)';
 })
+function positionMovingCircle()
+{
+    document.querySelector(".circle_animation").style.left = parseInt(getComputedStyle(document.querySelector("main")).left) + parseInt(getComputedStyle(document.querySelector("main")).width)+"px";
+    document.querySelector(".circle_animation").style.top = getComputedStyle(document.querySelector("main")).top;
+}
+window.addEventListener('resize', () => {
+    positionMovingCircle();
+})
+window.addEventListener('mousemove', (e)=> {
+    console.log("translateX(-"+e.clientX/8+"px)");
+    console.log(document.querySelector(".my_name p:nth-child(1)"));
+    document.querySelector(".my_name p:nth-child(1)").style.animation = "none";
+    document.querySelector(".my_name p:nth-child(1)").style.transition = "all .3s ease-out";
+    document.querySelector(".my_name p:nth-child(1)").style.transform = "translateX(-"+e.clientX/70+"px)";
+
+    document.querySelector(".my_name p:nth-child(2)").style.animation = "none";
+    document.querySelector(".my_name p:nth-child(2)").style.transition = "all .3s ease-out";
+    document.querySelector(".my_name p:nth-child(2)").style.transform = "translateX("+e.clientX/70+"px)";
+})
+positionMovingCircle();

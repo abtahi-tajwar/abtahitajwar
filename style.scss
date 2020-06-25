@@ -5,6 +5,7 @@
     --baseSecondary: #01051C; 
     --primaryGray: #E4E4E4;
     --secondaryGray: #444444;
+    --darkGreen: #121605;
 }
 * {
     margin: 0;
@@ -15,6 +16,9 @@ body {
     width: 100%;
     background-color: var(--baseColor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.circle_animation {
+    display: none;
 }
 .hero_heading {
     opacity: 1;
@@ -260,6 +264,163 @@ main {
         display: none;
     }
 }
+
+@media all and (orientation: landscape) and (min-width: 1000px)
+{
+    html {
+        font-size: 1vw;
+    }
+    body {
+        overflow: hidden;
+    }
+    .circle_animation {
+        display: block;
+        height: 31.6vh;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        animation: rotateAnimation 5s linear infinite;
+        img {
+            height: 100%;
+        }
+        
+    }
+    .hero {
+        height: 46.3vh;
+        width: 70vw;
+        position: absolute;
+        left: 7.5vw;
+        top: 6.5vh;
+        &::before {
+            content: ' ';
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            height: 200%;
+            background-color: var(--accentColor);
+            width: 2px;
+        }
+        &::after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 20%;
+            height: 2px;
+            background-color: var(--accentColor);
+            width: 100%;
+        }
+        .hero_logo {
+            position: absolute;
+            right: 1vw;
+            top: 0vw;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--darkGreen);
+            img {
+                height: 70%;
+                width: 70%;
+                margin: 0;
+                padding: 0;
+                transform: translate(-10px, 0px)
+            }
+        }
+        .my_name {
+            display: block;
+            position: absolute;
+            left: 43px;
+            top: 43px;
+            p {
+                font-size: 8rem;
+                line-height: 6rem;
+                span {
+                    font-size: 12rem;
+                }
+            }
+            p:nth-child(1) {
+                -webkit-text-stroke: 2px var(--accentColor);
+            }
+        }
+        .namemove {
+            transform: all .5s ease-out;
+        }
+        .my_title {
+            display: block;
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }        
+    }
+    aside {
+        position: absolute;
+        width: 250px;
+        right: 4.5vw;
+        top: 16.2vh;        
+        nav {
+            ul {
+                background-color: transparent;
+                flex-direction: column;
+                align-items: flex-end;
+                line-height: 50px;
+                li::after {
+                    content: ' ';
+                    margin-left: auto;
+                    display: block;
+                    transform: translate(-2px, -10px);
+                    transform-origin: 100% 100%;
+                    height: 2px;
+                    width: 0%;
+                    background-color: var(--accentColor);
+                    transition: all .1s linear;
+                }
+                li:hover::after {
+                    width: 100%;                    
+                }
+                a:hover {
+                    border-bottom: none;
+                }
+            }
+        }
+        
+        
+    }
+    main {
+        position: absolute;        
+        left: 9vw;
+        top: 67vh;
+        width: 66%;
+        display: flex;
+        box-shadow: 50px 50px 50px -10px black;
+        nav {
+            width: 24%;
+            display: flex;
+            background-color: var(--primaryGray);
+        }
+        .sidebarplaceholder {
+            display: block;
+            padding-top: 96px;
+            font-weight: bold;
+            margin: 0 auto;
+            letter-spacing: .2rem;
+        }
+        .selectMenu {
+            display: none;
+        }
+        .websites {
+            margin-top: 30px;
+            justify-content: flex-start;
+            width: 60%;
+            .item {
+                display: flex;
+            }
+        }
+
+    }        
+}
 @keyframes abtahiFadeIn
 {
     from {
@@ -291,5 +452,14 @@ main {
     to {
         transform: translateY(0px);
         opacity: 1;
+    }
+}
+@keyframes rotateAnimation
+{
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
