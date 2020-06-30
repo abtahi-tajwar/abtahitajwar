@@ -20,6 +20,17 @@ document.querySelector(".copy_email").addEventListener('click', ()=> {
     popUp();
     setTimeout(popHide, 1000);
 })
+document.querySelector(".my_subtitle span").addEventListener('mouseover', (e)=> {
+    console.log("mouse over");
+    let popup = document.querySelector(".my_skills");
+    popup.style.display = "block";
+    popup.style.right = window.innerWidth-e.clientX+"px";
+    popup.style.top = e.clientY+"px";
+})
+
+document.querySelector(".my_subtitle span").addEventListener('mouseout', ()=> {
+    document.querySelector(".my_skills").style.display = "none";
+})
 function popUp()
 {
     document.querySelector(".popup").style.opacity = "1";

@@ -17,11 +17,19 @@ body {
     background-color: var(--baseColor);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.hero {
+    .social_media {
+        display: none;
+    }
+}
 .hero_heading {
     opacity: 1;
     width: 100%;
 
-    img {
+    img:nth-child(1) {
+        display: none;
+    }
+    img:nth-child(2) {
         margin-left: 50%;
         margin-top: 50px;
         transform: translateX(-50%);
@@ -89,6 +97,15 @@ aside {
 }
 .email {
     text-align: center;
+    input {
+        background: none;
+        color: white;
+        border: none;
+        outline: none;
+        width: 200px;
+        text-align: center;
+        pointer-events: none;
+    }
     .copy_email {
         padding: .5rem;
         background-color: var(--accentColor);
@@ -178,13 +195,14 @@ aside {
                     font-weight: normal;
                     padding-right: 20px;
                     margin-top: 10px;
+                    text-align: left;
+                    padding-left: 20px;
                         &:after {
                             content: '';
                             display: block;
                             height: 1px;
                             width: 90%;
                             background-color: black;
-                            margin-left: 20px;
                             margin-top: 10px;
                             margin-bottom: 10px;
                         }
@@ -209,6 +227,128 @@ aside {
         transform: translateX(-50%);
         img {
             width: 80%;
+        }
+    }
+}
+@media all and (orientation: landscape) and (min-width: 1000px) {    
+    aside {
+        display: none;   
+    }
+    .container {
+        background-color: white;
+        height: 100vh;
+        display: flex;
+        .hero {
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .social_media {
+                display: block;
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                img {
+                    width: 65%;
+                    transition: transform .4s ease-out;
+                    &:hover {
+                        transform: translateY(-10px);
+                    }
+                }
+            }
+            .hero_heading {
+                height: 100%;
+                width: 100%;
+                .hero_logo {
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img:nth-child(1) {
+                        display: block;
+                        transform: none;
+                        margin: 0;
+                        height: 40%;
+                        transform: translateX(-50px)
+                    }
+                    img:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
+            
+            .my_name {
+                display: none;
+            }
+            p {
+                display: none;
+            }
+        }
+        .about_me {
+            flex: 1;
+            background-color: var(--baseColor);
+            color: white;
+            .iam {
+                margin-top: 80px;
+                font-size: 3rem;
+                margin-left: 40px;
+            }
+            .my_name {
+                display: flex;
+                margin-left: 40px;
+                p:nth-child(1) {
+                    font-size: 5rem;
+                    -webkit-text-stroke: 2px var(--accentColor);
+                    color: transparent;
+                }
+                p:nth-child(2) {
+                    font-size: 5rem;                    
+                    color: white;
+                }
+            }
+            .my_subtitle {
+                color: white;
+                font-size: 1.5rem;
+                margin-left: 40px;
+                margin-bottom: 20px;
+                padding: 0rem;
+                span {
+                    font-size: 1.2rem;
+                    background-color: var(--accentColor);
+                    padding: .2rem;
+                    cursor: pointer;
+                }
+            }
+            .cover_letter {
+                width: 80%;
+                text-align: justify;
+                margin-left: 20px;
+                margin-bottom: 40px;
+            }
+            .my_skills {
+                display: none;
+                position: fixed;
+                right: 0px;
+                top: 0px;
+                width: 500px;
+                background-color: white;
+                color: black;
+                padding: 0;
+                transform-origin: 100% 0%;
+                .heading {
+                    display: none;
+                }
+                ul {
+                    margin-bottom: 10px;
+                }
+
+            }
+            .social_media {
+                display: none;
+            }
         }
     }
 }
