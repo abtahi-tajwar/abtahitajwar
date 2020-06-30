@@ -385,6 +385,9 @@ main {
             p:nth-child(1) {
                 -webkit-text-stroke: 2px var(--accentColor);
             }
+            p:nth-child(1) {
+                padding-left: .4rem;
+            }
         }
         .namemove {
             transform: all .5s ease-out;

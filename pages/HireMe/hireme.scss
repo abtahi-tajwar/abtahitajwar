@@ -1,0 +1,147 @@
+:root {
+    --baseColor: #050B27;
+    --accentColor: #FF9E72;   
+    --baseSecondary: #01051C; 
+    --primaryGray: #E4E4E4;
+    --secondaryGray: #444444;
+    --darkGreen: #121605;
+    --lightBlue: #6EA4F6;
+    --darkBlue: #2E75EC;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--baseColor);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.circle_animation {
+    display: none;
+}
+.bottom_section {
+    flex: 1;
+}
+.hero_heading {
+    opacity: 1;
+    width: 100%;
+
+    img {
+        margin-left: 50%;
+        margin-top: 50px;
+        transform: translateX(-50%);
+    }
+    p:nth-child(2) {
+        color: white;
+        margin-top: 30px;
+        text-align: center;
+        letter-spacing: 0.3rem;
+        font-size: .7rem;
+        opacity: 0;
+        transform: translateX(-20px);
+        animation: abtahiFadeIn 1s ease-out forwards;
+    }
+}
+aside {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    nav {
+        margin-top: 20px;
+        ul {
+            
+            height: 62px;
+            width: 100%;
+            background-color: var(--baseSecondary);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            list-style: none;
+            a {
+                text-decoration: none;
+                color: var(--accentColor);
+                letter-spacing: 0.3rem;
+                &:hover {
+                    border-bottom: 1px solid var(--accentColor);
+                }
+            }
+        }
+    }  
+}
+.form {
+    width: 100%;
+    height: 100%;    
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .from {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: var(--primaryGray);
+        letter-spacing: .3rem;
+        label {
+            margin-left: 20px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            margin-right: 20px;
+            background: none;
+            font-weight: lighter;
+            letter-spacing: .3rem;
+        }
+    }
+    .email-body {
+        flex: 1;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding: 10px;
+            box-sizing: border-box;
+            resize: none;
+        }
+        
+    }
+    .submit {
+        padding: 15px;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-image: linear-gradient(to right, var(--lightBlue), var(--darkBlue));
+        cursor: pointer;
+    }
+
+}
+@keyframes abtahiFadeIn
+{
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

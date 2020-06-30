@@ -505,6 +505,9 @@ main .standalone {
   .hero .my_name p:nth-child(1) {
     -webkit-text-stroke: 2px var(--accentColor);
   }
+  .hero .my_name p:nth-child(1) {
+    padding-left: .4rem;
+  }
   .hero .namemove {
     -webkit-transform: all .5s ease-out;
             transform: all .5s ease-out;

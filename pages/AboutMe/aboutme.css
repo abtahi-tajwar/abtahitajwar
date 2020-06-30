@@ -1,0 +1,331 @@
+:root {
+  --baseColor: #050B27;
+  --accentColor: #FF9E72;
+  --baseSecondary: #01051C;
+  --primaryGray: #E4E4E4;
+  --secondaryGray: #444444;
+  --lightGray: #707070;
+  --darkGreen: #121605;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--baseColor);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hero_heading {
+  opacity: 1;
+  width: 100%;
+}
+
+.hero_heading img {
+  margin-left: 50%;
+  margin-top: 50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hero_heading .my_name {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero_heading .my_name p {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.hero_heading .my_name p:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accentColor);
+  -webkit-animation: abtahiFadeIn 1s ease-out forwards;
+          animation: abtahiFadeIn 1s ease-out forwards;
+}
+
+.hero_heading .my_name p:nth-child(2) {
+  color: white;
+  -webkit-animation: tajwarFadeIn 1s ease-out forwards;
+          animation: tajwarFadeIn 1s ease-out forwards;
+}
+
+.hero_heading .my_title {
+  color: var(--accentColor);
+  text-align: center;
+  letter-spacing: 0.3rem;
+  font-size: .7rem;
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  -webkit-animation: abtahiFadeIn 1s ease-out 1s forwards;
+          animation: abtahiFadeIn 1s ease-out 1s forwards;
+}
+
+aside {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+aside nav {
+  margin-top: 20px;
+}
+
+aside nav ul {
+  height: 62px;
+  width: 100%;
+  background-color: var(--baseSecondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+aside nav ul a {
+  text-decoration: none;
+  color: var(--accentColor);
+  letter-spacing: 0.3rem;
+}
+
+aside nav ul a:hover {
+  border-bottom: 1px solid var(--accentColor);
+}
+
+aside .social_media {
+  display: none !important;
+}
+
+aside .scrollbar {
+  display: none;
+}
+
+.email {
+  text-align: center;
+}
+
+.email .copy_email {
+  padding: .5rem;
+  background-color: var(--accentColor);
+  width: 60px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.email .copy_email .popup {
+  content: 'copied';
+  display: block;
+  position: absolute;
+  color: white;
+  right: -50%;
+  top: -100%;
+  background-color: black;
+  padding: .3rem;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  border-radius: 10px;
+  -webkit-transform: translate(-100%, 100%);
+          transform: translate(-100%, 100%);
+  scale: .5;
+  opacity: 0;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.about_me {
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.about_me .cover_letter {
+  text-align: center;
+  color: var(--lightGray);
+  font-size: 1.3rem;
+  padding: 1.3rem;
+  padding-top: 1.5rem;
+}
+
+.about_me .my_skills {
+  width: 100%;
+  letter-spacing: .4rem;
+  padding-bottom: 150px;
+}
+
+.about_me .my_skills h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about_me .my_skills .skills_container {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+}
+
+.about_me .my_skills .skills_container .primary_skills {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.about_me .my_skills .skills_container .primary_skills h1 {
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: normal;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.about_me .my_skills .skills_container .primary_skills h1:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 90%;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+
+.about_me .my_skills .skills_container .primary_skills ul {
+  list-style: none;
+}
+
+.about_me .my_skills .skills_container .primary_skills ul li {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.about_me .my_skills .skills_container .secondary_skills {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: var(--primaryGray);
+}
+
+.about_me .my_skills .skills_container .secondary_skills h1 {
+  font-size: 1.3rem;
+  font-weight: normal;
+  padding-right: 20px;
+  margin-top: 10px;
+}
+
+.about_me .my_skills .skills_container .secondary_skills h1:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 90%;
+  background-color: black;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about_me .my_skills .skills_container .secondary_skills ul {
+  list-style: none;
+}
+
+.about_me .my_skills .skills_container .secondary_skills ul li {
+  padding-left: 20px;
+}
+
+.about_me .social_media {
+  position: absolute;
+  width: 58vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.about_me .social_media img {
+  width: 80%;
+}
+
+@-webkit-keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes tajwarFadeIn {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes tajwarFadeIn {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=aboutme.css.map */

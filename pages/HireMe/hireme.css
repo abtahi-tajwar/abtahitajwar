@@ -1,0 +1,214 @@
+:root {
+  --baseColor: #050B27;
+  --accentColor: #FF9E72;
+  --baseSecondary: #01051C;
+  --primaryGray: #E4E4E4;
+  --secondaryGray: #444444;
+  --darkGreen: #121605;
+  --lightBlue: #6EA4F6;
+  --darkBlue: #2E75EC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--baseColor);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.circle_animation {
+  display: none;
+}
+
+.bottom_section {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.hero_heading {
+  opacity: 1;
+  width: 100%;
+}
+
+.hero_heading img {
+  margin-left: 50%;
+  margin-top: 50px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hero_heading p:nth-child(2) {
+  color: white;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  font-size: .7rem;
+  opacity: 0;
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px);
+  -webkit-animation: abtahiFadeIn 1s ease-out forwards;
+          animation: abtahiFadeIn 1s ease-out forwards;
+}
+
+aside {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+aside nav {
+  margin-top: 20px;
+}
+
+aside nav ul {
+  height: 62px;
+  width: 100%;
+  background-color: var(--baseSecondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+aside nav ul a {
+  text-decoration: none;
+  color: var(--accentColor);
+  letter-spacing: 0.3rem;
+}
+
+aside nav ul a:hover {
+  border-bottom: 1px solid var(--accentColor);
+}
+
+.form {
+  width: 100%;
+  height: 100%;
+}
+
+.form form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form .from {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--primaryGray);
+  letter-spacing: .3rem;
+}
+
+.form .from label {
+  margin-left: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.form .from input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  margin-right: 20px;
+  background: none;
+  font-weight: lighter;
+  letter-spacing: .3rem;
+}
+
+.form .email-body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.form .email-body textarea {
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+}
+
+.form .submit {
+  padding: 15px;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--lightBlue)), to(var(--darkBlue)));
+  background-image: linear-gradient(to right, var(--lightBlue), var(--darkBlue));
+  cursor: pointer;
+}
+
+@-webkit-keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes abtahiFadeIn {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=hireme.css.map */

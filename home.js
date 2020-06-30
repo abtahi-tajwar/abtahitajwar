@@ -1,3 +1,6 @@
+let mobile = 'all and (orientation: portrait) and (max-width: 1000px)';
+let isMobile = window.matchMedia(mobile).matches;
+
 window.addEventListener('scroll', (e)=> {
     document.querySelector(".hero_heading").style.opacity = (210-window.scrollY)/210;
     document.querySelector(".hero_heading img").style.transform = "translateX(-50%) scale("+(210-window.scrollY)/210+")";
@@ -10,8 +13,7 @@ window.addEventListener('scroll', (e)=> {
         else {
             item.style.animation = "none";
         }
-    })
-    
+    })    
 })
 let trayOpen = 0;
 document.querySelector(".selectMenuHeading").addEventListener('click', () => {
@@ -73,6 +75,8 @@ function positionMovingCircle()
 }
 window.addEventListener('resize', () => {
     positionMovingCircle();
+    isMobile = window.matchMedia(mobile).matches;
+    
 })
 window.addEventListener('mousemove', (e)=> {
     document.querySelector(".my_name p:nth-child(1)").style.animation = "none";
@@ -87,29 +91,32 @@ positionMovingCircle();
 let shown = false;
 
 window.addEventListener( 'wheel', function( e ) {
-    console.log("wheel");
-    if(detectMouseWheelDirection(e) === 'up' && shown === true) {
-        changeState("on");
-        shown = false;
-        sidenavdisplay(false);
+    if(!isMobile) {
+        if(detectMouseWheelDirection(e) === 'up' && shown === true) {
+            changeState("on");
+            shown = false;
+            sidenavdisplay(false);
+        }
+        else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
+            changeState("off");
+            shown = true;
+            sidenavdisplay(true);
+        }
     }
-    else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
-        changeState("off");
-        shown = true;
-        sidenavdisplay(true);
-    }
+    
 });
 window.addEventListener( 'DOMMouseScroll', function( e ) {
-    console.log("wheel");
-    if(detectMouseWheelDirection(e) === 'up' && shown === true) {
-        changeState("on");
-        shown = false;
-        sidenavdisplay(false);
-    }
-    else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
-        changeState("off");
-        shown = true;
-        sidenavdisplay(true);
+    if(!isMobile) {
+        if(detectMouseWheelDirection(e) === 'up' && shown === true) {
+            changeState("on");
+            shown = false;
+            sidenavdisplay(false);
+        }
+        else if(detectMouseWheelDirection(e) === 'down' && shown === false) {
+            changeState("off");
+            shown = true;
+            sidenavdisplay(true);
+        }
     }
 });
 function changeState(state)
