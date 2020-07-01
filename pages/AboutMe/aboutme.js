@@ -17,6 +17,7 @@ window.addEventListener('scroll', (e)=> {
 })
 
 document.querySelector(".copy_email").addEventListener('click', ()=> {
+    copyEmail();
     popUp();
     setTimeout(popHide, 1000);
 })
@@ -31,6 +32,12 @@ document.querySelector(".my_subtitle span").addEventListener('mouseover', (e)=> 
 document.querySelector(".my_subtitle span").addEventListener('mouseout', ()=> {
     document.querySelector(".my_skills").style.display = "none";
 })
+function copyEmail()
+{
+    document.querySelector(".email input").select();
+    document.execCommand('copy');
+    document.querySelector(".email input").blur();
+}
 function popUp()
 {
     document.querySelector(".popup").style.opacity = "1";
